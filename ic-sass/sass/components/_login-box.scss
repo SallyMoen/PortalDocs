@@ -1,0 +1,114 @@
+.login-box {
+  color: $login-section-text-color;
+  font: $login-section-font-family;
+  height: 100%;
+  line-height: $line-height-base !important;
+  //min-height: 310px; // disabled 5/1/17
+  padding: 10px 20px;
+  text-align: left;
+  h1,h2 {
+    font-family: $login-heading-font-family;
+    font-size: $login-heading-text-size;
+    padding: 2px 0;
+  }
+}
+.login-form {
+  @extend %center-basic;
+  @extend %left-block;
+  margin-top: 10px;
+  padding: 0;
+  form {
+    margin: 0;
+    width: 100%;
+  }
+}
+.form-group {
+  @include equal-h-margins(0);
+  width: 100%;
+}
+.login-box-heading {
+  font-size: $login-heading-text-size;
+  margin: 15px 0;
+}
+.login-tabs-content h2,
+.login-box p,
+.login-tabs-content p,
+.login-tabs-content label,
+.login-box label  {
+  @extend %center-basic;
+  padding: 2px 3px;
+}
+.login-box input[type="text"],
+.login-tabs-content input[type="text"],
+.login-box input[type="password"],
+.login-tabs-content input[type="password"],
+{
+  display: inline-block !important;
+  float: left !important;
+  max-width: 100%;
+  padding: 2px 3px;
+  width: 100%;
+}
+.input-group {
+  @extend %left-block;
+  margin-left: 5%;
+  white-space: nowrap;
+  width: 100%;
+}
+.input-group-addon {
+  display: inline-block;
+  padding: 9px 24px 9px 10px;
+  i {
+    @extend %left-block;
+	  @include equal-h-margins(auto);
+  }
+}
+.login-form button {
+  @include equal-h-margins(5%);
+}
+.recovery-link-section {
+  clear: both;
+  min-height: 27px;
+  margin-top: 10px;
+  a {
+    color: $login-section-link-color;
+  }
+  p {
+    display: inline-block;
+  }
+}
+.radio-inline {
+  margin-bottom: 10px;
+  width: 100%;
+  label {
+    max-width: 66px;
+    font-size: $font-size-base;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: $small-screen) {
+  .login-box {
+    height: 100%;
+    margin-left: auto !important;
+    margin-top: 0;
+    min-height: 330px;
+    width: $full-width;
+  }
+  .login-form {
+    padding-left: 5px;
+  }
+}
+@media only screen and (min-width: $small-screen + 1) and (max-width: $tablet-portrait) {
+  .login-box {
+	  @include equal-h-margins(auto);
+    min-height: 320px;
+    width: $full-width;
+  }
+}
+@media only screen and (min-width: $tablet-portrait) and (max-width: $tablet-landscape) {
+  .login-box {
+    @include equal-h-margins(auto);
+    width: 80%;
+  }
+}

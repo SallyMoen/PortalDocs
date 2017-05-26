@@ -1,0 +1,223 @@
+// accordion mixins
+@mixin accordion-toggle-glyph-uncollapsed($glyph-color, $glyph-code: "\e113") {
+  color: $glyph-color;
+  content: $glyph-code;
+  font-family: 'Glyphicons Halflings';
+}
+@mixin accordion-toggle-glyph-collapsed($glyph-color, $glyph-code: "\e114") {
+  color: $glyph-color;
+  content: $glyph-code;
+  font-family: 'Glyphicons Halflings';
+}
+
+@mixin banner-position($pos){
+  @if $pos == 'absolute' {
+    position: absolute;
+    top: 0;
+    left: 0;
+  } @else if 'relative' {
+    position: relative;
+  } @else if 'static' {
+    position: static;
+  } @else if 'fixed' {
+    position: fixed;
+  } @else {
+    position: relative;
+  }
+}
+
+// borders and boxes
+@mixin border-radius($r) {
+  -webkit-border-radius: $r;
+  -moz-border-radius: $r;
+  border-radius: $r;
+}
+// params: $r = radius size,
+// $hs = horizonal side (e.g. bottom ),
+// $vs = vertical side (e.g. left)
+@mixin border-radius-corner($r,$hs,$vs) {
+  -moz-border-radius-#{$hs}#{$vs}: $r;
+  -webkit-border-#{$hs}-#{$vs}-radius: $r;
+  border-#{$hs}-#{vs}-radius: $r;
+}
+@mixin border-radius-left($r) {
+  -moz-border-radius-topleft: $r;
+  -webkit-border-top-left-radius: $r;
+  border-top-left-radius: $r;
+
+  -moz-border-radius-bottomright: $r;
+  -webkit-border-bottom-right-radius: $r;
+  border-bottom-right-radius: $r;
+}
+@mixin border-radius-top($r) {
+  -moz-border-radius-topleft: $r;
+  -webkit-border-top-left-radius: $r;
+  border-top-left-radius: $r;
+
+  -moz-border-radius-topright: $r;
+  -webkit-border-top-right-radius: $r;
+  border-top-right-radius: $r;
+}
+@mixin box-sizing($x: border-box){
+  -webkit-box-sizing: $x;
+  -moz-box-sizing: $x;
+  box-sizing: $x;
+}
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+// align-content: flex-start|flex-end|stretch|space-between|space-around|initial|inherit
+@mixin flex-align-content($a) {
+  -webkit-align-content: $a;
+  align-content: $a;
+}
+// align-items: flex-start|flex-end|center|baseline|stretch
+@mixin flex-align-items($a) {
+  -webkit-box-align: $a;
+  -moz-box-align:  $a;
+  -ms-flex-align: $a;
+  -webkit-align-items: $a;
+  align-items: $a;
+}
+// align-self: auto|stretch|center|flex-start|flex-end|baseline|initial|inherit
+@mixin flex-align-self($a) {
+  -webkit-align-self: $a;
+  align-self: $a;
+}
+@mixin flex-direction($d) {
+  -webkit-flex-direction: $d;
+  -ms-flex-direction: $d;
+  flex-direction: $d;
+}
+@mixin flex-inline {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+// justify-content: flex-start|flex-end|center|space-between|space-around
+@mixin flex-justify($j) {
+  -webkit-justify-content: $j;
+  -moz-justify-content: $j;
+  -ms-justify-content: $j;
+  justify-content: $j;
+}
+@mixin flex-order($o) {
+  -webkit-box-ordinal-group: $o;
+  -moz-box-ordinal-group: $o;
+  -ms-flex-order: $o;
+  -webkit-order: $o;
+  order: $o;
+}
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+@mixin glow($glow-color, $glow-intensity) {
+  box-shadow: 0 0 10px rgba($glow-color, $glow-intensity);
+  -webkit-box-shadow: 0 0 10px rgba($glow-color, $glow-intensity);
+  -moz-box-shadow: 0 0 10px rgba($glow-color, $glow-intensity);
+}
+@mixin highlight($color, $side, $width) {
+  border-#{$side}: $width solid $color;
+}
+@mixin no-shadow {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+@mixin shadow-glow($glow-color, $glow-intensity) {
+  box-shadow: 0 4px 8px rgba($glow-color, $glow-intensity);
+  -webkit-box-shadow: 0 4px 8px rgba($glow-color, $glow-intensity);
+  -moz-box-shadow: 0 4px 8px rgba($glow-color, $glow-intensity);
+}
+// buttons
+@mixin btn-border($color, $radius) {
+  border: 2px solid $color;
+  @include border-radius($radius);
+}
+@mixin btn-sizing($pad-y,$pad-x, $radius) {
+  @include border-radius($radius);
+  padding: $pad-y $pad-x;
+}
+@mixin font($font-size,$line-height,$font-family,$font-weight) {
+	font:#{$font-size}/#{$line-height} $font-family;
+	font-weight:$font-weight;
+}
+
+@mixin keyframe ($animation_name) {
+	@-webkit-keyframes $animation_name {
+		@content;
+	}
+
+	@-moz-keyframes $animation_name {
+		@content;
+	}
+	@keyframes $animation_name {
+		@content;
+	}
+}
+
+@mixin animation ($delay, $duration, $animation) {
+	-webkit-animation-delay: $delay;
+	-webkit-animation-duration: $duration;
+	-webkit-animation-name: $animation;
+	-webkit-animation-fill-mode: forwards;
+
+	-moz-animation-delay: $delay;
+	-moz-animation-duration: $duration;
+	-moz-animation-name: $animation;
+	-moz-animation-fill-mode: forwards;
+
+	animation-delay: $delay;
+	animation-duration: $duration;
+	animation-name: $animation;
+	animation-fill-mode: forwards;
+}
+@mixin breakpoint($point) {
+	@if $point == big {
+		@media screen and (max-width: 1600px){@content;}
+	}
+	@else if $point == medium {
+		@media screen and (max-width: 900px){@content;}
+	}
+	@else if $point == small {
+		@media screen and (max-width: 600px){@content;}
+	}
+}
+// margins and padding
+@mixin equal-h-margins($m) {
+  margin-left: $m;
+  margin-right: $m;
+}
+@mixin equal-h-padding($p){
+  padding-left: $p;
+  padding-right: $p;
+}
+@mixin equal-v-margins($m) {
+  margin-bottom: $m;
+  margin-top: $m;
+}
+@mixin equal-v-padding($p) {
+  padding-bottom: $p;
+  padding-top: $p;
+}
+
+@mixin transition($val...) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  transition: $val;
+}

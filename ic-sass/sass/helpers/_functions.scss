@@ -1,0 +1,6 @@
+@function fluidize($target-px, $context-px){
+  @return ($target-px / $context-px) * 100%;
+}
+@function calc-equal-margins($container-width-pct) {
+  @return (100% - $container-width-pct)/2;
+}

@@ -1,0 +1,458 @@
+// NAVBAR (STANDARD/BASIC)
+
+// uncollapsed navbar styles
+nav {
+  background-color: $nav-bg-color;
+  clear: both;
+  @extend %left-block;
+  margin: 4px auto;
+  min-height: $navbar-height-basic;
+  position: static;
+  width: 100%;
+  ul {
+    background-color: $nav-bg-color;
+    clear: both;
+    list-style-type: none;
+    margin: 10px 0 3px -50px;
+    max-width: $content-text-maxwidth;
+    width: 100%;
+    li {
+      display: inline-block;
+      float: left;
+	    margin-bottom: 0;
+      padding: 8px 12px 0px 7px;
+      a {
+        color: $nav-link-color;
+        font-family: $heading-font-family;
+        font-size: $nav-main-item-size;
+        font-weight: 400;
+        padding: 10px 10px 0 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover, &:focus {
+          color: $nav-hover-text-color;
+        }
+      }
+    }
+  }
+}
+#navigation input[type="checkbox"] {
+  display: none;
+}
+.check-toggle-text {
+  font-family: $heading-font-family;
+  font-size: $nav-main-item-size;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.open-item {
+  @include border-radius-top(3px);
+  color: $nav-active-text-color;
+  display: inline-block;
+  height: 99%;
+  padding: 8px 0 18px 0;
+  //padding: 6px 0 13px 0;
+  > a {
+    color: $nav-active-text-color !important;
+    text-decoration: none;
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+.has-child {
+  color: $nav-text-color;
+  display: inline-block;
+  font-size: $nav-main-item-size;
+  position: relative;
+}
+
+.sublevel {
+  background-color: $nav-submenu-bg-color;
+  border-top: 5px solid transparent;
+  //@extend %subtle-drop-shadow; // disabled 4/19/17
+  @extend %subtler-drop-shadow; // added 4/19/17
+  @include border-radius(3px); //added 4/19/17
+  display: none;
+  list-style: none;
+  margin-left: 5px;
+  margin-top: 0px;
+  padding: 5px 0;
+  position: absolute;
+  width: auto;
+  z-index: 1000;
+  li {
+    clear: both;
+    display: block;
+    margin: 2px 10px 2px 2px;
+    padding: 3px 10px;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    a {
+      color: $nav-submenu-text-color;
+      font-family: $nav-submenu-font-family;
+      font-size: $nav-submenu-text-size;
+      text-transform: none;
+      &:hover {
+        color: $nav-submenu-hover-color;
+      }
+    }
+  }
+}
+.dummy-link {
+  cursor: default;
+  pointer-events: none;
+}
+.home-icon {
+  text-decoration: none;
+}
+// collapsed navbar styles
+#navbar-bars {
+  color: $white;
+}
+.navbar-toggle {
+  float: left;
+  margin-left: 20px;
+}
+#navigation {
+  float: right;
+  @include equal-h-margins(0);
+}
+
+@media only screen and (max-width: $small-screen) {
+  .nav {
+    @include equal-v-margins(0);
+  }
+  nav > ul {
+    margin: 0;
+    padding: 0;
+    li > a {
+      color: $nav-collapsed-text-color !important;
+      line-height: $nav-collapsed-line-height;
+      padding: 0 0 0 10px;
+    }
+  }
+  .main-nav-collapse {
+    background-color: transparent;
+    padding-left: -100px; //new
+    z-index: 1000;
+    > ul {
+      > li {
+        clear: both;
+        display: block;
+        float: left;
+        line-height: $nav-collapsed-line-height;
+  	    padding: 5px 7px;
+        > a {
+          color: $nav-collapsed-text-color !important;
+        }
+      }
+    }
+  }
+  .level-2 {
+    margin-left: 2px;
+  }
+  .open-item {
+    background: transparent !important;
+    border: none !important;
+    padding: 0;
+    > a {
+      background: transparent;
+      color: $nav-collapsed-text-color;  //!important removed
+      display: block;
+      float: left;
+      > .home-text {
+        padding-left: 0px;
+      }
+    }
+  }
+  .has-child {
+    clear: both;
+    display: block;
+    float: left;
+    line-height: $nav-collapsed-line-height;
+    margin: 0;
+    padding: 0;
+    > label {
+      padding-left: 10px;
+      > a.dummy-link {
+        padding-left: 0 !important;
+      }
+    }
+  }
+  .home-icon {
+    display: none !important;
+  }
+  .home-text {
+    border: none !important;
+    clear: both;
+    color: $nav-collapsed-text-color;
+    display: block !important;
+    float: left;
+    padding-left: 10px;
+  }
+  .dummy-link {
+    padding: 5px 0px;
+  }
+  .sublevel {
+    background-color: transparent;
+    border: none;
+    @include border-radius(0);
+    box-shadow: none;
+    clear: both;
+    color: $nav-collapsed-text-color;
+	  display: none;
+    font-family: $heading-font-family;
+	  font-size: $nav-collapsed-sub-text-size;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: auto;
+    z-index: inherit;
+    li {
+      margin: 0;
+      a {
+        color: $nav-collapsed-text-color;
+        display: block;
+        font-family: $heading-font-family;
+		    font-size: $nav-collapsed-sub-text-size;
+        font-weight: 400;
+        line-height: $nav-collapsed-line-height;
+        margin: 0px 0px 0px 10px;
+        text-transform: uppercase;
+        &:hover, &:focus {
+          color: $nav-hover-text-color;
+        }
+      }
+    }
+  }
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  #navigation input[type="checkbox"]:checked + .sublevel {
+    display: block;
+  }
+  #navigation input[type="checkbox"] {
+    display: none;
+  }
+  #navigation a {
+    @include transition(all .125s ease-in-out);
+  }
+}
+
+@media only screen and (min-width: $small-screen + 1) and (max-width: $tablet-landscape) {
+  #custom-navbar-header {
+    margin: auto 0;
+  }
+  .main-nav-collapse {
+    background-color: transparent;
+    padding-left: -100px;
+    z-index: 1000;
+    > ul > li {
+      clear: both;
+      display: block;
+      float: none;
+      line-height: $nav-collapsed-line-height;
+      margin: 0;
+      padding: 5px 7px;
+      white-space: nowrap;
+      > a {
+        color: $nav-collapsed-text-color !important;
+        margin: 0;
+        padding: 0 0 0 10px;
+      }
+    }
+  }
+  .level-2 {
+    background-color: transparent;
+    margin-left: 2px;
+  }
+  .home-text {
+    border: none;
+    color: $nav-collapsed-text-color;
+    display: inline-block !important;
+    float: left;
+    padding: 5px 0 5px 10px;
+  }
+  .open-item {
+    background-color: transparent !important;
+    border: none !important;
+    > a {
+      background-color: transparent;
+      color: $nav-collapsed-text-color; //!important removed
+	    display: block;
+      float: left;
+      padding: 5px 0;
+    }
+    .home-text {
+      padding-left: 0px;
+    }
+  }
+  .has-child {
+    background-color: transparent !important;
+    clear: both;
+    display: block;
+    float: left;
+    line-height: $nav-collapsed-line-height;
+    margin: 0;
+    padding: 0;
+    label {
+      padding-left: 10px; //new
+    }
+  }
+  .home-icon {
+    display: none !important;
+  }
+  .dummy-link {
+    padding: 0; //new
+  }
+  .sublevel {
+    background-color: transparent;
+    border: none;
+	  @include border-radius(0);
+    box-shadow: none;
+    clear: both;
+    color: $nav-collapsed-text-color;
+    display: none;
+    font-family: $heading-font-family;
+	  font-size: $nav-collapsed-sub-text-size;
+    font-weight: 400;
+    position: relative;
+    width: auto;
+    z-index: inherit;
+    li a {
+      color: $nav-collapsed-text-color;
+      display: block;
+      font-family: $heading-font-family;
+	    font-size: $nav-collapsed-sub-text-size;
+      font-weight: 400;
+      margin: 0px 0px 0px 10px;
+      padding: 0;
+      text-transform: uppercase;
+      &:hover, &:focus {
+        color: $nav-collapsed-hover-color;
+      }
+    }
+  }
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  #navigation input[type="checkbox"]:checked + .sublevel {
+    display: block;
+  }
+  #navigation input[type="checkbox"] {
+    display: none;
+  }
+  #navigation a {
+    @include transition(all .125s ease-in-out);
+    //transition: all .125s ease-in-out;
+    //-webkit-transition: all .125s ease-in-out;
+  }
+}
+
+@media only screen and (min-width: $small-screen-landscape) and (max-width: $tablet-landscape - 1) {
+  .dummy-link {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: $tablet-landscape) {
+  .open-item {
+    .check-toggle-text {
+  	  color: $black !important;
+    }
+  }
+  #navigation input[type=checkbox] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+   /* For mobile, it's typically better to position checkbox on top of clickable
+      area and turn opacity to 0 instead. */
+  }
+  #navigation input[type="checkbox"]:checked + .sublevel {
+    display: block;
+  }
+  #navigation input[type="checkbox"] {
+    display: none;
+  }
+  #navigation a {
+    transition: all .125s ease-in-out;
+    -webkit-transition: all .125s ease-in-out;
+  }
+}
+@media only screen and (min-width: $tablet-landscape + 1) {
+  .home-icon {
+    display: inline-block !important;
+  }
+  .home-text {
+    display: none !important;
+  }
+
+}
+@media only screen and (min-width: $tablet-landscape-large) {
+  .has-child {
+    &:hover .sublevel, &:focus .sublevel {
+      background-color: $nav-submenu-bg-color;
+      clear: both;
+      color: $nav-submenu-text-color;
+      display: block;
+	    top: 100%;
+      width: auto;
+      z-index: 1000 !important;
+    }
+    .sublevel {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+// CHANGES BOOTSTRAP NAVBAR COLLAPSE BREAKPOINT
+@media (max-width: $tablet-landscape) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left, .navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+    > li {
+      float: none;
+      > a {
+	    @include equal-v-padding(10px);
+      }
+    }
+  }
+  .collapse.in {
+    display: block !important;
+  }
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}

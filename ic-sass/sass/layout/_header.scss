@@ -1,0 +1,17 @@
+@media only screen and (max-width: $small-screen) {
+	.full-brand {
+		display: none;
+	}
+	.smallish-brand {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: $small-screen + 1) {
+	.full-brand {
+		display: block;
+	}
+	.smallish-brand {
+		display: none;
+	}
+}

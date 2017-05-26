@@ -1,0 +1,36 @@
+.simple-footer {
+	background-color: $footer-bg-color;
+	clear: both;
+	color: $footer-text-color;
+	p {
+	  color: inherit;
+		text-align: center;
+	}
+}
+.simple-footer-link {
+  color: $footer-link-color;
+  text-decoration: $footer-link-decoration;
+  &:focus,
+  &:hover {
+    color: $footer-hover-link-color;
+  }
+  &:visited {
+    color: $footer-visited-link-color;
+  }
+  &:active {
+    color: $footer-active-link-color;
+  }
+}
+.simple-footer-text {
+  color: inherit;
+  font-family: $footer-font-family;
+  font-size: $footer-text-size;
+  line-height: $footer-line-height;
+	text-align: center;
+}
+
+@media only screen and (max-width: $tablet-portrait) {
+	.simple-footer {
+		margin: 0;
+	}
+}

@@ -1,0 +1,116 @@
+.clever-page {
+  margin-bottom: 50px;
+  width: 100%;
+}
+.clever-heading {
+  margin-left: 0;
+}
+.clever-text-section-heading {
+  margin-bottom: 10px;
+  margin-left: 10%;
+  margin-top: 20px;
+}
+.clever-subheading {
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.clever-aside {
+  margin-left: 0;
+  width: 305px;
+  z-index: 1001;
+}
+.clever-content {
+    &.parchment-content {
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding-bottom: 0;
+  }
+}
+.clever-text-section {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  overflow: hidden;
+  p {
+    @include equal-v-margins(10px);
+  }
+}
+.panel-group {
+  margin-top:15px;
+  p {
+    width: 100%;
+  }
+}
+.folded-text {
+  .clever-aside-text {
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: $tablet-portrait) {
+  .clever-page {
+    .vanilla-hr-two {
+      @include equal-h-margins(calc-equal-margins($near-full-width));
+      width: $near-full-width;
+    }
+    .parchment-heading {
+      @include equal-h-margins(calc-equal-margins($near-full-width));
+      @include equal-v-margins(15px);
+      height: 100%;
+      overflow: hidden;
+      width: $near-full-width;
+      h1,h2,h3,h4,h5,h6 {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+    }
+    .clever-content {
+      .parchment-left-col {
+        @include equal-h-margins(calc-equal-margins($near-full-width));
+        padding: 0;
+        width: $near-full-width;
+        h1,h2,h3,h4,h5 {
+          margin:0;
+          padding:0;
+          width: 100%;
+        }
+        .clever-text-section-heading {
+          margin:10px 0 5px 0;
+          padding:0;
+          width: 100%;
+          h1,h2,h3,h4,h5 {
+            margin:0;
+            padding:0;
+            width: 100%;
+          }
+        }
+        .clever-text-section {
+          width: 100%;
+          p, span {
+            line-height: $line-height-small-screen;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+    >.knowledgebase {
+      @include equal-h-margins(calc-equal-margins($near-full-width));
+      @include equal-v-margins(10px);
+      width: $near-full-width;
+      .faq-section {
+        .panel-group {
+          .panel {
+            .panel-body {
+              p, span {
+                line-height: $line-height-small-screen;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

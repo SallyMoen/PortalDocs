@@ -1,0 +1,44 @@
+// bootstrap overrides
+.col-md-12 {
+  padding: 0;
+}
+// end bootstrap overrides
+
+//container styles
+.main-container {
+  overflow: $main-overflow;
+}
+.top-header {
+  background-color: $white;
+}
+.middle-container {
+  background-color: inherit;
+}
+.main-content {
+  background-color: $white !important;
+  //@extend %subtle-drop-shadow; // disabled 4/19/17
+  @extend %subtler-drop-shadow; // added 4/19/17
+  @include border-radius(3px); // added 4/19/17
+  display: block;
+  height: 100%;
+  @include equal-h-margins(auto);
+  @include equal-v-margins(20px);
+  max-width: $content-section-width;
+  padding-bottom: 20px;
+  padding-top: 0;
+  h1 {
+    margin-top: 20px;
+  }
+
+}
+.center-block {
+  @include equal-h-margins(auto);
+  max-width: $content-section-width;
+}
+
+@media only screen and (max-width: $tablet-portrait + 1) {
+  .main-content {
+    @include no-shadow;
+    @include equal-v-margins(0);
+  }
+}

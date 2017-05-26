@@ -1,0 +1,95 @@
+// executive, law office-type aesthetic
+@import '../components/login-box';
+//@import '../components/simple-nav';
+//@import '../components/complex-footer';
+
+// main breakpoint settings
+$breakpt-phone-portrait: $iphone-4-portrait;
+$breakpt-phone-landscape: $iphone-4-landscape;
+$breakpt-tablet-portrait: $ipad-portrait;
+$breakpt-tablet-landscape: $ipad-landscape;
+$breakpt-laptop: $lg-screen-min;
+$breakpt-desktop: $lg-screen-min;
+
+// font settings
+$font-family-base: $font-georgia !default;
+$font-size-base: 16px !default;
+$line-height-base: 110% !default;
+
+// heading settings
+// heading sizes
+$h1-size: 2rem !default;
+$h2-size: 1.6rem !default;
+$h3-size: 1.4rem !default;
+$h4-size: 1.3rem !default;
+$h5-size: 1.2rem !default;
+$h6-size: 1.1rem !default;
+
+// heading alignments
+$h1-align: left !default;
+$h2-align: left !default;
+$h3-align: left !default;
+$h4-align: left !default;
+$h5-align: left !default;
+$h6-align: left !default;
+
+// other heading settings
+$heading-font-family: $font-tahoma !default;
+$heading-text-color: $black;
+$heading-width: 80%;
+$heading-maxwidth: 700px;
+
+// subheading settings
+$subheading-font-family:  $font-trebuchet !default;
+$subheading-text-color: $black;
+$subheading-width: 80%;
+$subheading-maxwidth: 700px;
+
+// container settings
+$full-page-bg-base: $sleek-grey !default;
+$container-bg-base: $white !default;
+$main-container-width: 80%;
+$narrower-container-width: 66%;
+
+// content main settings
+$content-text-color: $black;
+$content-text-width: 80%;
+$content-text-maxwidth: 100%;
+
+// main nav menu settings
+$nav-bg-color: $cold-dark-green;
+$nav-text-color: $white;
+$nav-submenu-bg-color: $white;
+$nav-submenu-text-color: $black;
+$nav-link-color: $white;
+$nav-active-bg-color: $full-page-bg-base;
+$nav-active-text-color: $black;
+$nav-collapsed-sub-text-color: $white;
+$nav-collapsed-sub-text-size: 1.2em;
+$nav-collapsed-line-height: 1.4em;
+
+// image settings
+$main-banner-type: 'relative';
+
+// footer settings
+$footer-bg-color: $cold-dark-green;
+$footer-font-family: $font-georgia;
+$footer-text-size: $font-size-base;
+$footer-line-height: $line-height-base;
+$footer-text-color: $white;
+$footer-link-color: $white;
+$footer-link-decoration: none;
+$footer-hover-link-color: $white;
+$footer-visited-link-color: $white;
+$footer-active-link-color: $white;
+
+// login section settings
+$login-section-bg-color: $dark-teal-green;
+$login-section-font-family: $font-georgia;
+$login-section-text-color: $white;
+$login-section-link-color: $white;
+
+// print settings
+//$print-bg-color: $white;
+//$print-text-color: $black;
+//$print-font-family: $font-trebuchet;

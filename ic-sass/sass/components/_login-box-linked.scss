@@ -1,0 +1,43 @@
+%login-link-section {
+  margin: auto;
+  min-height: 40px;
+  width: 100%;
+  > a {
+    //color: $slate-grey;
+    font-size: $font-size-base;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+}
+.login-link-section-1 {
+  @extend %login-link-section;
+  width: 100%;
+}
+.login-link-section-2 {
+  @extend %login-link-section;
+  padding-left: 5px;
+  > .btn {
+    display: block;
+    width: 48%;
+  }
+  width: 100%;
+}
+.login-tabs-intro {
+  margin-bottom: 10px;
+}
+.login-box-link {
+  @include equal-h-margins(calc-equal-margins($wider-container-width));
+  @include equal-v-margins(20px);
+  width: $wider-container-width;
+}
+//.login-box-link:first-of-type {
+//  margin-top: 20px;
+//}
+@media only screen and (max-width: $small-screen) {
+  .login-button-link {
+    >.btn {
+      padding: 0 1.5rem;
+    }
+  }
+}

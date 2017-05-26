@@ -1,0 +1,220 @@
+.thumb-section {
+  @include equal-h-margins(calc-equal-margins($narrower-container-width));
+  padding-bottom: 20px;
+  width: $narrower-container-width;
+  h1,h2,h3,h4,h5,h6,p,span {
+    width: 100%;
+  }
+}
+.thumb-list {
+  @extend %left-block;
+  list-style-type: none;
+}
+.thumb-list-intro-text {
+  text-align: left;
+  p {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+.thumb-list-left-col {
+  float: left;
+  max-width: 135px;
+  min-width: 100px;
+  width: 20%;
+}
+.thumb-list-right-col {
+  float: right;
+  max-width: 565px;
+  width: $content-text-width;
+  p {
+    font-size: $font-size-base;
+    line-height: 130%;
+    margin-left: 0 !important;
+    width: 98% !important;
+  }
+}
+.thumb-list-h3 {
+  font-family: $font-family-base;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.thumb-list-img {
+  margin: 0 15px 0 0;
+}
+.thumb-list-text {
+  text-align: left;
+}
+.thumb-list-item {
+  padding: 10px;
+  overflow: auto;
+  &:hover {
+    background: $white;
+  }
+  p:last-of-type {
+    @include highlight(transparent,bottom,4px);
+  }
+}
+.thumb-list-heading {
+  @extend %left-block;
+  font-family: $heading-font-family;
+  font-size: $h1-size;
+  margin-bottom: 30px;
+  margin-left: 0;
+  margin-right: auto;
+  //max-width: $content-text-maxwidth;
+  @include equal-v-padding(5px);
+  text-align: left;
+  width: 100%;
+}
+.thumb-list-post-text {
+  @extend %left-block;
+  @include equal-h-margins(calc-equal-margins($narrower-container-width));
+  @include equal-h-padding(10px);
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  padding-bottom: 20px;
+  width: $narrower-container-width;
+  p,ul,span {
+    @include equal-h-margins(0);
+    @include equal-v-margins(10px);
+    padding: 0;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: $small-screen){
+  .thumb-section {
+    @include equal-h-margins(auto);
+    width: $near-full-width;
+  }
+  .thumb-list {
+    margin-left: 0;
+  }
+  .thumb-list-item {
+    @include equal-h-margins(auto);
+    width: $near-full-width;
+    p:last-of-type {
+      padding-bottom: 30px;
+      @include highlight($sleek-grey,bottom,4px);
+    }
+  }
+  .thumb-list-post-text, .thumb-list-intro-text ~ p {
+    @include equal-h-margins(calc-equal-margins($near-full-width));
+    width: $near-full-width;
+    p, ul {
+      @include equal-h-margins(calc-equal-margins($near-full-width));
+      line-height: $line-height-small-screen;
+      width: $near-full-width;
+    }
+  }
+}
+@media only screen and (max-width: $small-screen + 120) {
+  .thumb-section {
+    .thumb-list {
+      @include equal-v-margins(10px);
+      .basic-card-shadowless-small {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        .thumb-list-item {
+          margin: 5px 0;
+          padding: 0;
+          width: 100%;
+          .thumb-list-h3 {
+            font-weight: $font-bold-ish;
+          }
+          .thumb-list-right-col {
+            p {
+              font-size: $font-size-base;
+              line-height: $line-height-small-screen;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: $small-screen-landscape){
+  .thumb-section {
+    @include equal-h-margins(auto);
+    width: $near-full-width;
+  }
+  .thumb-list {
+    margin-left: 0;
+  }
+  .thumb-list-heading{
+    @include equal-h-margins(calc-equal-margins($near-full-width));
+    padding: 0 10px;
+    width: $near-full-width;
+    > h1 {
+      display: block;
+      @include equal-h-margins(calc-equal-margins($near-full-width));
+      padding: 0 10px;
+      width: $near-full-width;
+    }
+  }
+  .thumb-list-item {
+    @include equal-h-margins(calc-equal-margins($near-full-width));
+    width: $near-full-width;
+    p {
+      line-height: $line-height-small-screen;
+      &:last-of-type {
+        @include highlight($sleek-grey,bottom,4px);
+        padding-bottom: 30px;
+      }
+    }
+  }
+  .thumb-list-post-text, .thumb-list-intro-text ~ p {
+    @include equal-h-margins(0);
+    line-height: $line-height-small-screen;
+    width: $full-width;
+  }
+}
+@media only screen and (max-width: $tablet-portrait + 1) {
+  .thumb-section, .thumb-list-post-text {
+    @include equal-h-margins(calc-equal-margins($near-full-width));
+    padding: 0;
+    width: $near-full-width;
+    h1,h2,h3,h4,h5,h6,p,span {
+      line-height: $line-height-small-screen;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    .thumb-list-heading {
+      margin: 15px 0 10px 0;
+      padding: 0;
+      width: 100%;
+      h1,h2 {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+  .thumblist-supporting-text {
+    @include equal-h-margins(calc-equal-margins($near-full-width));
+    margin-bottom: 15px !important;
+    margin-top: 15px !important;
+    height: 100%;
+    overflow: hidden;
+    width: $near-full-width;
+  }
+  .thumb-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	  width: 100%;
+  }
+  .thumb-list-left-col {
+    display: none;
+  }
+  .thumb-list-right-col {
+    float: left;
+    width: 100%;
+  }
+}

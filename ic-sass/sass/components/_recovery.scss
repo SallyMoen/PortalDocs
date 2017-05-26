@@ -1,0 +1,26 @@
+.forgot-heading {
+  font-family: $heading-font-family;
+  @extend %center-basic;
+  font-size: $h2-size;
+  @include equal-v-margins(15px);
+  max-width:$content-text-maxwidth;
+  text-align: left;
+}
+.forgot-text, .forgot-box, .forgot-form {
+  @extend %center-basic;
+  max-width:$content-text-maxwidth;
+  text-align: left;
+}
+.forgot-form {
+  @extend %left-block;
+}
+.forgot-text {
+  margin-bottom: 20px;
+  > a {
+    color: $content-text-color;
+	  text-decoration: none;
+	  &:hover, &:focus {
+	    text-decoration: underline;
+	  }
+  }
+}

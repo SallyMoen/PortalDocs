@@ -1,0 +1,86 @@
+.standard-page {
+  color: $content-text-color;
+  @extend %left-block;
+  font-family: $content-font-family;
+  @include equal-h-margins(calc-equal-margins($narrower-container-width));
+  padding-bottom: 20px;
+  width: $narrower-container-width;
+  h1, h2 {
+    color: $content-text-color;
+    @include equal-h-margins(0);
+    @include equal-v-padding(15px);
+    text-align: left;
+  }
+  p {
+    @extend %left-block;
+    line-height: $line-height-base;
+    @include equal-v-margins(5px);
+  }
+  .col-md-12 {
+    p {
+      width: 100%;
+    }
+  }
+  ul {
+    @extend %left-block;
+    list-style-position: outside;
+    list-style-type: disc;
+    @include equal-v-margins(5px);
+    li {
+      line-height: $line-height-base;
+      margin-bottom: 10px;
+      margin-left: 20px;
+    }
+  }
+  ol {
+    @extend %center-basic;
+    line-height: $line-height-base;
+    @include equal-v-margins(5px);
+    li {
+      margin-bottom: 10px;
+      margin-left: 20px;
+    }
+  }
+  iframe {
+    display: block;
+    height: 100%;
+    @extend %center-basic;
+    @include equal-v-margins(20px);
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+.ok-calendar {
+  @include equal-h-margins(auto);
+  padding-left: 3%;
+  width: $content-text-width;
+}
+@media only screen and (max-width: $small-screen-landscape) {
+  .standard-page {
+    @include equal-h-margins(calc-equal-margins($wider-container-width));
+    width: $wider-container-width;
+    ul {
+      margin-left: 0;
+    }
+    p {
+      line-height: $line-height-small-screen;
+    }
+  }
+}
+@media only screen and (max-width: $small-screen-landscape + 1) {
+  .standard-page {
+    iframe {
+      display: none;
+    }
+    ul {
+      margin-left: 0;
+    }
+  }
+}
+@media only screen and (max-width: $tablet-landscape) {
+  h1 {
+    margin-left: 10%;
+  }
+}

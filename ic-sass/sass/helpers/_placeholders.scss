@@ -1,0 +1,53 @@
+%center-basic {
+  @include equal-h-margins(auto);
+  width: $main-container-width;
+}
+%cushioned-container {
+  @extend %left-block;
+  margin: 20px auto;
+  width: $narrower-container-width;
+}
+%cushioned-wide-container {
+  @extend %left-block;
+  //margin: 20px auto;
+  @include equal-h-margins(10%);
+  @include equal-v-margins(20px);
+  width: $main-container-width;
+}
+%flex-display {
+  display: flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+%full-width-container {
+  @extend %left-block;
+}
+/*
+%home-left-element-basic {
+  display: block;
+  @include equal-h-margins(auto);
+  //max-height: 300px;
+  max-width: 98%;
+  position: relative;
+}
+*/
+%left-block {
+  display: block;
+  float: left;
+}
+%right-block {
+  display: block;
+  float: right;
+}
+%subtle-drop-shadow {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+%subtler-drop-shadow {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}

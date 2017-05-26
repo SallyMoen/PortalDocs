@@ -1,0 +1,41 @@
+.sidebar-logo {
+	margin-top: 10px;
+}
+// RIBBON SIDEBAR/ASIDE
+
+/* Folded Ribbon-Thing Styles */
+.sidebar-img {
+  margin-top: 10px;
+  max-width: 233px;
+}
+.folded-sidebar {
+  background: $ribbon-bg;
+  width: $ribbon-width;
+  height: 100%;
+  position: relative;
+  color: $ribbon-text-color;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: 0;
+    bottom: -12px;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid $ribbon-fold-color
+  }
+}
+
+.folded-content {
+  @include border-radius-left(5px);
+  z-index: 600;
+  position: relative;
+  padding: 25px 40px 25px 25px;
+  margin-top: 15px;
+}
+
+.folded-text {
+  font-family: $ribbon-font-family;
+  font-size: $ribbon-text-size;
+  line-height: $ribbon-line-height !important;
+}

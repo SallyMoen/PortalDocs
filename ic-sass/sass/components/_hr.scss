@@ -1,0 +1,48 @@
+/*----------------------
+  Horizontal Rule Styles
+  starting with style-*
+  by Harry Roberts
+------------------------*/
+
+hr {
+  &.vanilla-hr {
+    background: $grey;
+    border-top-color: $grey;
+    clear: both;
+    @extend %center-basic;
+  }
+  &.vanilla-hr-two {
+    @extend .vanilla-hr;
+    @include equal-v-margins(5px);
+  }
+  &.style-one {
+    @extend %center-basic;
+    background: $slate-grey;
+    background-image: linear-gradient(to right, $lightish-grey, $slate-grey, $lightish-grey);
+    border: 0;
+    height: 1px;
+  }
+  &.style-two {
+    @extend %center-basic;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    border: 0;
+    height: 1px;
+  }
+  &.style-eight {
+    @extend %center-basic;
+    border: none;
+    border-top: medium double $slate-grey;
+    color: $slate-grey;
+    padding: 0;
+    text-align: center;
+    &:after {
+      content: "ยง";
+      display: inline-block;
+      position: relative;
+      top: -0.7em;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: white;
+    }
+  }
+}

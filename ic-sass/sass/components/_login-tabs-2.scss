@@ -1,0 +1,84 @@
+.login-tabs-section {
+  min-width: 320px;
+  overflow: visible;
+  width: 100%;
+  z-index: 0;
+}
+.login-tabs-2, .login-tabs-2-linked {
+  height: 100%; //new
+  .login-box {
+    //padding-top: 0; // disabled 4/21/2017
+    padding: 0; // added 4/21/2017
+    .clever-section {
+      @include equal-h-margins(calc-equal-margins($near-full-width));
+      height: 100%;
+      width: $near-full-width;
+      a {
+        @include equal-h-margins(calc-equal-margins($near-full-width));
+        display: block;
+        width:$near-full-width;
+        img {
+          clear: both;
+          display: block;
+          float: none;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+.tab-pane {
+  height: 100%;
+  min-height: 288px;
+  @include equal-v-padding(20px);
+  p {
+    margin-left: 3%;
+    margin-right: auto;
+    width: 90%;
+  }
+  .login-form {
+    margin-left: 2%;
+    margin-right: auto;
+    width: 90%;
+  }
+}
+.custom-tab {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  &.active {
+    background-color: transparent;
+    border: none;
+  }
+}
+.custom-tab-link {
+  border: none !important;
+  border-radius: 0 !important;
+  color: $login-section-link-color;
+  //font-weight: $font-bold;
+  font-size: $font-size-base + 3px;
+  &:hover, &:focus {
+    color: $login-section-link-color;
+  }
+}
+
+@media only screen and (max-width: $small-screen) {
+  .login-tabs-2-linked {
+    .tab-pane {
+      min-height: 320px;
+    }
+    .login-box {
+      @include equal-v-padding(0);
+    }
+  }
+}
+@media only screen and (min-width: $small-screen-landscape) and (max-width: $tablet-portrait) {
+  .login-tabs-2-linked {
+    .login-box {
+      @include equal-v-padding(0);
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.lower-content {
+  //display: block; //disabled 5/1/17
+  display: flex; // 5/1/17
+  display: -ms-flex; // 5/1/17
+  display: -webkit-flex; // 5/1/17
+  flex-direction: row; //5/1/17
+  flex-wrap: wrap; //5/1/17
+  height: 100%;
+  //margin-top: 5px; //added 4/27/17
+  margin-top: 16px; // trying out diff margin 5/1/2017
+  //margin-bottom: 20px; // disabled to test style 4/6/17
+  //@include equal-v-margins(5px);
+  //margin: 0;
+  //@include equal-h-margins(calc-equal-margins($near-full-width)); // disabled to test style 4/6/17
+  //@include equal-h-margins(auto); // disabled to test style 4/6/17
+  //padding: 5px;
+  //width: $near-full-width;
+  max-width: $content-section-width;
+  overflow: hidden;
+  width: 100%;
+  img {
+	  //@extend %right-block;
+    //@extend %left-block;
+    height: 100%;
+	  //margin-left: 10%;
+  	//margin-right: auto;
+    //margin-top: 5px;
+	  //padding-left: 20px;
+    width: 100%;
+  }
+  // bootstrap override (specific to this page type)
+  .row {
+    margin:0;
+    width: 100%;
+  }
+  .col-md-6 {
+    display: flex; // 5/1/17
+    .home-right-col {
+      @include border-radius-corner($border-radius-size,bottom,right); // 5/1/17
+      display: block;
+      display: flex; // 5/1/17
+      float: none;
+      //margin-left: 3px;
+      //width: $content-section-width/2 - 3px;
+      margin-left: 9px;
+      overflow: hidden; // 5/1/17
+      width: $content-section-width/2 - 9px;
+    }
+    .home-left-col {
+      @include border-radius-corner($border-radius-size,bottom,left); // 5/1/17
+      display: block;
+      display: flex; // 5/1/17
+      float: none;
+      //margin-right: 3px;
+      //width: $content-section-width/2 - 3px;
+      margin-right: 9px;
+      overflow: hidden; // 5/1/17
+      width: $content-section-width/2 - 9px;
+    }
+  }
+}
+// bootstrap/umbraco style overrides
+.main-content {
+  padding: 0;
+}
+.col-md-6 {
+  padding: 0;
+}
+// end override styles
+
+.home-right-col {
+ //margin: 10px 5px 5px 5px; // disabled to test style 4/6/17
+ max-width: $content-section-width/2; // 4/21/17
+ width: 100%; // 4/21/17
+}
+.home-left-col {
+  //margin: 5px 5px 5px 0px; // disabled to test style 4/6/17
+  //margin: 0 2px 0 0; // test style 4/6/17
+  //margin: 0 2px; // test style 4/21
+  max-width: $content-section-width/2; // 4/21/17
+  width: 100%; // 4/21/17
+  img {
+    //@extend %home-left-element-basic; // disabled to test style 4/6/17
+    display: block; // test style 4/6/17
+    width: 100%; // test style 4/6/17
+  }
+  iframe {
+    @extend %home-left-element-basic;
+    width: 98%;
+  }
+}
+@media only screen and (max-width: $tablet-landscape) {
+	.lower-content img, .home-left-col iframe {
+		display: none;
+	}
+  .lower-content {
+    .col-md-6 {
+      padding: 0;
+    }
+    .home-right-col {
+      margin: 0;
+    }
+  }
+}
+@media only screen and (min-width: $tablet-landscape + 1) {
+	.lower-content img, .home-left-col iframe {
+		display: block;
+	}
+}

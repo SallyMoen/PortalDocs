@@ -1,0 +1,29 @@
+// Screens
+
+// phones
+$iphone-4-portrait: 320px !default;
+$iphone-4-landscape: 480px !default;
+$iphone-5-portrait: 320px !default;
+$iphone-5-landscape: 568px !default;
+$iphone-6-portrait: 375px !default;
+$iphone-6-landscape: 667px !default;
+$iphone-6-plus-portrait: 414px !default;
+$iphone-6-plus-landscape: 736px !default;
+$galaxy-phone-portrait: 320px !default; // htc phones are the same size
+$galaxy-phone-landscape: 640px !default; //htc phones are the same size
+
+// tablet
+$ipad-portrait: 768px !default;
+$ipad-landscape: 1024px !default;
+$galaxy-tablet-portrait: 800px !default;
+$galaxy-tablet-landscape: 1280px !default;
+$nexus-portrait: 601px !default;
+$nexus-landscape: 906px !default;
+$kindle-sm-portrait: 800px !default;
+$kindle-sm-landscape: 1280px !default;
+$kindle-lg-portrait: 1200px !default;
+$kindle-lg-landscape: 1600px !default;
+
+// laptops
+$lg-screen-min: 1200px !default;
+//$lg-screen-max: 1600px !default;

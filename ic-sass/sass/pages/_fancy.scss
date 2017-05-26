@@ -1,0 +1,264 @@
+// fancy page placeholders
+%colorful-section-base {
+  @include border-radius($border-radius-size);
+  @include equal-v-margins(10px);
+  overflow: hidden;
+  padding: 10px 25px;
+  p,h1,h2,h3,h4,h5,h6,li {
+    @include equal-v-margins(10px);
+  }
+}
+
+// fancy page styles
+.fancy-page {
+    @include equal-h-margins(calc-equal-margins($main-container-width));
+    color: $fancy-content-text;
+    font-family: $content-font-family;
+    width: $main-container-width;
+    .grid-section {
+      margin: 30px 0;
+      .row {
+        @include equal-v-margins(8px);
+      }
+    }
+    p {
+        color: $content-text-color;
+        line-height: $line-height-base + 4;
+        text-align: left;
+        width: 100%;
+    }
+    ul {
+        li {
+            line-height: $line-height-base + 2;
+        }
+    }
+    span {
+        display: block;
+        float: left;
+        text-align: left;
+        width: 100%;
+    }
+    h1,h2 {
+        @include equal-v-margins(8px);
+        color: $fancy-content-text;
+        display: block;
+        float: left;
+        font-family: $font-league-gothic;
+        font-size: $h1-size;
+    }
+    img {
+        display: block;
+        height: auto;
+        //margin-top: 10px;
+        max-width: 100%;
+        position: relative;
+    }
+    .basic-box {
+      @include border-radius($border-radius-size);
+      border: 1px solid $fancy-list-border-color;
+      margin: 10px 0;
+      padding: 10px 25px;
+      p {
+        @include equal-v-margins(15px);
+        line-height: $line-height-base + 6;
+      }
+      p:first-of-type {
+        margin-top: 0;
+      }
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+      h1 {
+        font-size: $h1-size;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: $h2-size;
+        margin-bottom: 15px;
+      }
+      img {
+        margin-top: 0;
+      }
+    }
+    .invisibox {
+      @extend .basic-box;
+      border: 0;
+    }
+    .big-heading{
+      > h1 {
+        font-size: $h1-size + 1.3rem;
+      }
+    }
+    .fancy-col {
+        p,
+        span {
+            padding: 5px;
+            text-align: left;
+        }
+    }
+    .fancy-area {
+        display: inline-block;
+        @include equal-h-margins(auto);
+        max-width: 100%;
+        div {
+            width: 100%;
+            > i {
+                @include equal-h-margins(auto);
+                text-align: center;
+                width: 100%;
+            }
+        }
+        .pretty-list,
+        .pretty-little-list {
+            border: 0;
+            margin: 0;
+            //padding: 15px 0;
+        }
+        .fancy-icon-lg {
+            color: $large-icon-color;
+            display: inline-block;
+            @include equal-v-margins(30px);
+            max-width: 100%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        &.col-md-6 {
+          padding: 0 15px 0 0;
+          .pretty-list, .pretty-little-list {
+            padding-right: 20px;
+            width: 100%;
+          }
+        }
+        &.col-md-8 {
+          padding: 0 15px 0 0;
+        }
+        &.col-md-4 {
+          padding: 0 15px 0 0;
+        }
+    }
+    .centered-text {
+        i,p,span {
+            display: inline-block;
+            @include equal-h-margins(auto);
+            max-width: 100%;
+            position: relative;
+            text-align: center;
+        }
+    }
+    .centered-img {
+        display: block;
+        height: auto;
+        @include equal-h-margins(auto);
+        max-width: 100%;
+        img {
+            @extend .centered-img;
+        }
+    }
+    .basic-box {
+      .pretty-list, .pretty-little-list {
+        padding: 0;
+      }
+    }
+    .light-grey-fancy-section {
+      @extend %colorful-section-base;
+      background-color: $light-grey;
+      p,h1,h2,h3,h4,h5,h6,li,span {
+        //color: $black !important;
+        color: $fancy-content-text !important;
+      }
+    }
+    .white-fancy-section {
+      @extend %colorful-section-base;
+      background-color: $white;
+      p,h1,h2,h3,h4,h5,h6,li,span {
+        color: $fancy-content-text !important;
+      }
+    }
+    .white-on-slate-fancy-section {
+      @extend %colorful-section-base;
+      background-color: $slate-grey;
+      p,h1,h2,h3,h4,h5,h6,li,span {
+        color: $white !important;
+      }
+    }
+    .white-on-blue-fancy-section {
+      @extend %colorful-section-base;
+      background-color: $navy-blue;
+      p,h1,h2,h3,h4,h5,h6,li,span {
+        color: $white !important;
+      }
+    }
+    .white-on-red-fancy-section {
+      @extend %colorful-section-base;
+      background-color: $brick-red;
+      p,h1,h2,h3,h4,h5,h6,li,span {
+        color: $white !important;
+      }
+    }
+}
+@media only screen and (max-width: $small-screen) {
+    .fancy-page {
+        img {
+            display: none;
+        }
+        .display-on-small-screen {
+          img {
+            display: block !important;
+          }
+        }
+        .fancy-area {
+          &.col-md-6 {
+            .pretty-list {
+              @include equal-h-padding(15px);
+            }
+          }
+        }
+    }
+}
+@media only screen and (max-width: $small-screen-landscape) {
+    .fancy-page {
+        @include equal-h-margins(calc-equal-margins($wider-container-width));
+        width: $wider-container-width;
+        .fancy-area {
+            h1 {
+                @include equal-h-margins(0);
+                width: 100%;
+            }
+            .pretty-list,
+            .pretty-little-list {
+                @include no-shadow;
+                @include equal-v-margins(0);
+                border: 0;
+                padding: 10px;
+                line-height: 200%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: $small-screen-landscape + 1) {
+  .fancy-page {
+    .display-on-small-screen {
+      img {
+        display: block !important;
+      }
+    }
+    .hide-on-small-screen {
+      img {
+        display: none;
+      }
+    }
+  }
+}
+@media only screen and (max-width: $tablet-portrait + 1) {
+    .fancy-page {
+        @include equal-h-margins(calc-equal-margins($wider-container-width));
+        width: $wider-container-width;
+        h1 {
+            width: 100%;
+        }
+        .pretty-list,
+        .pretty-little-list {
+            width: $full-width;
+        }
+    }
+}

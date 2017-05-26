@@ -1,0 +1,207 @@
+.login-tabs-section {
+  height: 100%;
+  overflow: visible;
+  width: 100%;
+  z-index: 0;
+  .login-box {
+    @include flexbox;
+    @include flex-align-items(center);
+    @include flex-direction(column);
+    @include flex-justify(center);
+    color: $login-section-text-color;
+    font: $login-section-font-family;
+    height: 100%;
+    line-height: $line-height-base !important;
+    overflow: hidden; //new
+    padding: 10px 25px;
+    text-align: left;
+    h1,h2 {
+      font-family: $login-heading-font-family;
+      font-size: $login-heading-text-size;
+    }
+    >.login-header {
+      @include flex-order(1);
+      margin-bottom: 10px;
+      width: 100%;
+      h1,h2,p {
+        width: 100%;
+      }
+      .login-box-heading {
+        font-size: $login-heading-text-size;
+        margin: 0 0 15px 0;
+      }
+    }
+    .login-form {
+      @include flex-order(2);
+      margin: 5px 0;
+      padding: 0;
+      width: 100%;
+      form {
+        margin: 0;
+        width: 100%;
+        .form-group {
+          @include equal-h-margins(0);
+          margin-bottom: 10px;
+          width: 100%;
+          input {
+            margin-left: 0;
+            width: 100%;
+          }
+          button {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .clever-section {
+      @include flexbox;
+      @include flex-order(3);
+      height: auto;
+      width: 100%;
+    }
+    >.recovery-link-section {
+      @include flex-order(4);
+      height: auto;
+      width: 100%;
+    }
+    >.login-link-section-1 {
+      @include flexbox;
+      @include flex-order(5);
+      height: auto;
+      width: 100%;
+    }
+    >.login-link-section-2 {
+      @include flexbox;
+      @include flex(1 1 100%);
+      @include flex-align-items(stretch);
+      @include flex-direction(row);
+      @include flex-justify(flex-start);
+      @include flex-order(5);
+      height: auto;
+      width: 100%;
+      a {
+        margin-right: 5px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        button {
+          @include flex-align-self(stretch);
+        }
+      }
+    }
+  }
+  .login-tabs-2, .login-tabs-2-linked {
+    @include flexbox;
+    @include flex-justify(flex-start);
+    display: block;
+    float: left;
+    height: 100%;
+    width: 100%;
+    .login-box {
+      @include flex-align-items(stretch);
+      padding: 0;
+      .login-tabs {
+        .custom-tab {
+          background-color: transparent;
+          border: none;
+          border-radius: 0;
+          &.active {
+            background-color: transparent;
+            border: none;
+          }
+          .custom-tab-link {
+            border: none !important;
+            border-radius: 0 !important;
+            color: $login-section-link-color;
+            font-size: $font-size-base + 3px;
+            &:hover, &:focus {
+              color: $login-section-link-color;
+            }
+          }
+        }
+      }
+      >.login-tabs-content {
+        @include flexbox;
+        @include flex-direction(row);
+        @include flex-align-self(stretch);
+        padding: 0;
+        height: auto;
+        overflow: hidden;
+        width: 100%;
+        >.tab-pane {
+          @include flex(1);
+          @include flex-justify(center);
+          @include flex-direction(column);
+          @include flex-wrap(wrap);
+          height: 100%;
+          min-height: 288px;
+          padding: 10px 25px;
+          width: 100%;
+          z-index: 0;
+          &.active {
+            display: block;
+            z-index: 1 !important;
+          }
+          >.login-tabs-p {
+            @include equal-v-margins(5px);
+            @include flexbox;
+            @include flex-order(1);
+            //height: 100%;
+            height: auto;
+            width: 100%;
+          }
+          .login-tabs-intro {
+            @include equal-v-margins(5px);
+            @include flexbox;
+            @include flex-order(1);
+            width: 100%;
+          }
+          .login-form {
+            @include flex-order(2);
+            @include flexbox;
+            @include flex-direction(column);
+            //@include flex(0 1 100%);
+            height: auto;
+            width: 100%;
+          }
+          .recovery-link-section {
+            @include flexbox;
+            @include flex-order(3);
+            height: auto;
+            width: 100%;
+            p {
+              margin: 0;
+              padding: 0;
+            }
+          }
+          .login-link-section-1 {
+            @include equal-v-margins(10px);
+            @include flex-order(2);
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: $small-screen) {
+  .login-tabs-section {
+    img {
+      display: block !important;
+    }
+    .recovery-link-section {
+      @include equal-v-margins(0);
+    }
+  }
+}
+@media only screen and (min-width: $small-screen + 1) {
+  .login-tabs-section {
+    img {
+      display: block !important;
+    }
+    .recovery-link-section {
+      @include equal-v-margins(5px);
+    }
+  }
+}

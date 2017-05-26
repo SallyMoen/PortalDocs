@@ -1,0 +1,36 @@
+.basic-card, .basic-card-shadowless-small {
+  @include border-radius(3px); //added 4/19/17
+  @include equal-v-margins(20px);
+  //@extend %subtle-drop-shadow; // disabled 4/19/17
+  @extend %subtler-drop-shadow; // added 4/19/17
+  background-color: $card-bg-base;
+  border: 0;
+  height: 100%;
+  min-height: 20px;
+  padding: 10px;
+  @if $glow == true {
+    &:hover, &:focus {
+      //@include shadow-glow($hover-glow-color, 0.3); // disabled 4/19/17
+      @include shadow-glow($hover-glow-color, 0.2); // changed 4/19/17
+    }
+  }
+}
+.cardlike {
+  @include border-radius(3px);
+  background: $card-bg-base;
+  border: solid 1px $lightish-grey;
+  height: 100%;
+  min-height: 20px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: $small-screen-landscape) {
+  .basic-card-shadowless-small {
+    @include no-shadow;
+    @include equal-v-margins(0);
+    line-height: $line-height-small-screen;
+    &:hover, &:focus {
+      @include no-shadow;
+    }
+  }
+}

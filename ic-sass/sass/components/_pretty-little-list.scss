@@ -1,0 +1,43 @@
+.pretty-little-list {
+  @include equal-v-margins(20px);
+  > ul {
+    list-style-type: square;
+    > li {
+      font-size: $font-size-base;
+      font-weight: $font-bold;
+      line-height: $line-height-base;
+      list-style-position: inside;
+      @include equal-v-margins(2px);
+      padding-left: 2em;
+      text-indent: -2em;
+      > ul {
+        list-style-type: circle;
+        > li {
+          font-size: $font-size-base;
+          font-weight: $font-regular;
+          line-height: $line-height-base + 3;
+          list-style-position: inside;
+          @include equal-v-margins(5px);
+          padding-left: 2em;
+          text-indent: -2em;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: $tablet-portrait) {
+  .pretty-little-list {
+    ul {
+      li {
+        padding-left: 0;
+        text-indent: 0;
+        ul {
+          li {
+            padding-left: 0;
+            text-indent: 0;
+          }
+        }
+      }
+    }
+  }
+}

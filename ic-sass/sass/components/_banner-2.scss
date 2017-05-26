@@ -1,0 +1,23 @@
+.banner {
+	@include equal-h-margins(auto); // disabled to test new styles 4/6/17
+  @include banner-position($main-banner-type);
+	@include border-radius-top($border-radius-size);
+	margin-bottom: 20px; // disabled to test new styles 4/6/17
+	margin-top: 0; // disabled to test new styles 4/6/17
+	width: 100%;
+}
+.banner-inset {
+	margin: 8px 8px 0 8px;
+	max-width: 100%;
+	width: $content-section-width - 16px;
+}
+@if $banner-rounded-top == true {
+	.banner, .banner-inset {
+		@include border-radius-top($border-radius-size);
+	}
+}
+@media only screen and (min-width: $small-screen-landscape + 1) and (max-width: $tablet-portrait + 100) {
+	.banner {
+		margin-top: 10px;
+	}
+}

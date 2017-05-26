@@ -1,0 +1,29 @@
+@font-face
+{
+	font-family: 'League Gothic';
+	src: url('../fonts/LeagueGothic-Regular-webfont.eot');
+	src: url('../fonts/LeagueGothic-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/LeagueGothic-Regular-webfont.woff') format('woff'),
+		url('../fonts/LeagueGothic-Regular-webfont.ttf') format('truetype'),
+		url('../fonts/LeagueGothic-Regular-webfont.svg#LeagueGothicRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Font Families
+$font-arial: 'Arial', sans-serif;
+$font-courier: 'Courier', monospace;
+$font-georgia: 'Georgia','Times New Roman', Times, serif;
+$font-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-league-gothic: 'League Gothic', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-tahoma: Tahoma, Geneva, sans-serif;
+$font-times: 'Times New Roman',Times,serif;
+$font-trebuchet: Trebuchet MS, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-verdana: Verdana, Geneva, sans-serif;
+
+// Font Weights
+$font-thin: 100;
+$font-thin-ish: 300;
+$font-regular: 400;
+$font-bold-ish: 500;
+$font-bold: 600;

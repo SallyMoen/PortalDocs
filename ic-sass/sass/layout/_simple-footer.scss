@@ -1,0 +1,38 @@
+.simple-footer {
+	clear: both;
+	@extend %left-block;
+	height: 100%;
+	margin-right: 0;
+	margin-top: 15px;
+	min-height: $navbar-height-basic;
+	padding-top: 10px;
+	text-align: center;
+	width: 100%;
+	&.row {
+		//margin-left: 0;
+		padding: 0;
+		width: 100%;
+	}
+	p {
+		@extend %left-block;
+		@include equal-h-margins((100% - $footer-content-width)/2);
+		@include equal-v-margins(15px);
+		//max-width: $content-section-width;
+		width: $footer-content-width;
+	}
+}
+@media only screen and (max-width: $small-screen) {
+	.simple-footer {
+		padding: 10px;
+		&.row {
+			@include equal-h-margins(auto);
+			text-align: center;
+			width: 100%;
+		}
+	}
+}
+@media only screen and (max-width: $tablet-portrait) {
+	.simple-footer {
+		margin: 0;
+	}
+}

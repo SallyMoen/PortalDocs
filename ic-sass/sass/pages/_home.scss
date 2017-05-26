@@ -1,0 +1,99 @@
+.lower-content {
+  @include flexbox;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include flex-align-items(stretch);
+  height: 100%;
+  margin-top: 8px;
+  max-width: $content-section-width;
+  overflow: hidden;
+  width: 100%;
+  .col-md-6 {
+    @include flexbox;
+    @include flex-direction(row);
+    height: 100%;
+    max-width: $content-section-width/2 - 8px;
+    overflow: hidden;
+    padding: 0; // bootstrap override style
+    width: 50%;
+    &:first-of-type {
+      float: left;
+      margin-bottom: 8px;
+      margin-left: 8px;
+    }
+    &:last-of-type {
+      float: right;
+      margin-bottom: 8px;
+      margin-right: 8px;
+    }
+    .home-right-col {
+      @include border-radius-corner($border-radius-size,bottom,right);
+      @include flex-order(1);
+      float: right;
+      height: 305px;
+      margin-left: 4px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      width: $content-section-width/2 - 4px;
+      .login-tabs-section {
+        width: 100%;
+      }
+    }
+    .home-left-col {
+      @include border-radius-corner($border-radius-size,bottom,left);
+      @include flex-order(2);
+      float: left;
+      height: 305px;
+      margin-right: 4px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      width: $content-section-width/2 - 4px;
+    }
+  }
+}
+// bootstrap override (specific to this page type)
+.row {
+  margin:0;
+  width: 100%;
+}
+//umbraco override styles
+.main-content {
+  padding: 0;
+}
+// end override styles
+@media only screen and (max-width: $tablet-landscape) {
+  .lower-content {
+    margin: 0;
+    img {
+      display: none;
+    }
+    .col-md-6 {
+      @include flex-direction(column);
+      @include flex-justify(stretch);
+      margin: 0;
+      padding: 0;
+      &:first-of-type {
+        margin: 0;
+      }
+      &:last-of-type {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+      }
+      .home-left-col {
+        display: none;
+      }
+      .home-right-col {
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: $tablet-landscape + 1) {
+	.lower-content {
+    img {
+      display: block;
+    }
+	}
+}
